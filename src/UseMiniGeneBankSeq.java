@@ -16,7 +16,7 @@ Doris Jin 031254154 */
 
 public class UseMiniGeneBankSeq {
 
-	public static void main(String[] args) { //instantiate objects in the main here
+	public static void main(String[] args) { //instantiate objects in the main here n
 		MiniGenBankSeq bankSeq1= new MiniGenBankSeq(); //create a new object of MiniGenBankSeq
 		System.out.println(bankSeq1.toString()); //print object with no argument constructor
 
