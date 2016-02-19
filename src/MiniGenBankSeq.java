@@ -1,3 +1,13 @@
+/*
+ * AUTHOR: Doris Jin
+ * COURSE: BIF812	
+ * INSTRUCTOR: Marek Laskowski
+ * PURPOSE: The purpose of this MiniGenBankSeq.java file is as a class that is part of assignment1.
+ * 
+ * I declare that the attached assignment is my own work in accordance with Seneca Academic
+Policy. No part of this assignment has been copied manually or electronically from any other
+source (including web sites) or distributed to other students.
+Doris Jin 031254154 */
 
 public class MiniGenBankSeq extends SequenceLoader {
 	// Data members
@@ -6,7 +16,8 @@ public class MiniGenBankSeq extends SequenceLoader {
 	private String definition;
 	private String source;
 
-	// Methods (getters/setters)
+	// Declare methods (getters/setters); if method is null, returns stringNotInit error message
+	//otherwise, returns value of appropriate variable
 	public String getLocus() {
 		return stringNotInit(locus);
 	}
@@ -39,16 +50,18 @@ public class MiniGenBankSeq extends SequenceLoader {
 		source = _source;
 	}
 
-	// Constructors
+	// Declare Constructors
+	// Uninitialized constructor (no arguments)
 	MiniGenBankSeq() {
-	}; // Uninitialized constructor
+	}; 
 
-	MiniGenBankSeq(String constructLocus, String constructAccNum) { // semi-initialized
+	// semi-initialized (2 arguments)
+	MiniGenBankSeq(String constructLocus, String constructAccNum) { 
 		locus = constructLocus;
 		accNum = constructAccNum;
 	}
 
-	// fully initialized constructor
+	// fully initialized constructor (4 arguments)
 	MiniGenBankSeq(String constructLocus, String constructAccNum, String constructDefinition, String constructSource) {
 		locus = constructLocus;
 		accNum = constructAccNum;
@@ -57,23 +70,19 @@ public class MiniGenBankSeq extends SequenceLoader {
 	}
 
 	// overriding toString from Object
-
-	//letting method handle extra cases; using get___ because retrieving it indirectly
 	@Override
 	public String toString() {
 		return "locus: " + getLocus() + "\n" + "accNum: " + getAccNum() + "\n" + "definition: " + getDefinition() + "\n" + "source: "
 				+ getSource() + "\n";
 	}
 
+	//error message code; if null is found, returns error message, otherwise will return the string's input
 	public String stringNotInit(String inputString) {
 		if (inputString == null) {
-			
 			return "This data member is not initialized";
 		}
 		else {
 			return inputString;
 		}
-		
 	}
-
 }
