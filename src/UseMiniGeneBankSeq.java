@@ -9,37 +9,37 @@ Policy. No part of this assignment has been copied manually or electronically fr
 source (including web sites) or distributed to other students.
 Doris Jin 031254154 */
 
-/*Except, real GenBank data was used as input data from the links:
+/*Real data was used as input from the following links:
  * http://www.ncbi.nlm.nih.gov/Sitemap/samplerecord.html
+ * http://www.genome.jp/dbget-bin/www_bget?refseq+NC_000913
  */
 
 
 public class UseMiniGeneBankSeq {
 
-	public static void main(String[] args) { //instantiate objects in the main here n
-		MiniGenBankSeq bankSeq1= new MiniGenBankSeq(); //create a new object of MiniGenBankSeq
-		System.out.println(bankSeq1.toString()); //print object with no argument constructor
+	public static void main(String[] args) { //create and instantiate objects in the main here, then print to view
+		MiniGenBankSeq bankSeq1= new MiniGenBankSeq(); //creating object with no argument constructor
+		System.out.println(bankSeq1.toString()); //print to view
 
-		//use MiniGenBankSeq setter method to set data, creating an object using default constructor first
+		//setting data for all variables, initialize
 		MiniGenBankSeq bankSeq2= new MiniGenBankSeq();
-		bankSeq2.setLocus("SCU49845     5028 bp    DNA             PLN       21-JUN-1999"); 	//provide data for the object for all variables as not set by constructor
+		bankSeq2.setLocus("SCU49845     5028 bp    DNA             PLN       21-JUN-1999"); 	
 		bankSeq2.setAccNum("U49845");
 		bankSeq2.definition("Saccharomyces cerevisiae TCP1-beta gene, partial cds, and Axl2p (AXL2) and Rev7p (REV7) genes, complete cds.");
 		bankSeq2.source("Saccharomyces cerevisiae (baker's yeast)");
-		System.out.println(bankSeq2.toString()); //print object for all variables not set by constructor		
+		System.out.println(bankSeq2.toString()); //print to visualize set data	
 
-		MiniGenBankSeq bankSeq3= new MiniGenBankSeq("SCU49845", "U49845" ); //using 2 args constructor to initiate two data members, two are initialized by the 2 args setter
+		//creating object with 2 args constructor, then setting two of the objects and initialize
+		MiniGenBankSeq bankSeq3= new MiniGenBankSeq("NC_000913            4641652 bp    DNA     circular CON 16-DEC-2014", "NC_000913" ); //using 2 args constructor to initiate two data members, two are initialized by the 2 args setter
 		System.out.println(bankSeq3.toString()); ///
-		bankSeq3.definition("Saccharomyces cerevisiae TCP1-beta gene, partial cds, and Axl2p (AXL2) and Rev7p (REV7) genes, complete cds.");
-		bankSeq3.source("Saccharomyces cerevisiae (baker's yeast)");	
-		System.out.println(bankSeq3.toString()); //print objects using 2 args constructor with second Genbank file
 		
+		bankSeq3.definition("Escherichia coli str. K-12 substr. MG1655, complete genome.");
+		bankSeq3.source(" Escherichia coli str. K-12 substr. MG1655");	
+		System.out.println(bankSeq3.toString());
 		
-		MiniGenBankSeq bankSeq4= new MiniGenBankSeq("SCU49845", "U49845","Saccharomyces cerevisiae TCP1-beta gene, partial cds, and Axl2p (AXL2) and Rev7p (REV7) genes, complete cds.", "Saccharomyces cerevisiae (baker's yeast)" );
+		//creating object with 4 args constructor, don't need to set
+		MiniGenBankSeq bankSeq4= new MiniGenBankSeq("NC_002549              18959 bp    cRNA    linear   VRL 30-MAR-2015", "NC_002549","Zaire ebolavirus isolate Ebola virus/H.sapiens-tc/COD/1976/Yambuku-Mayinga, complete genome. ", "Zaire ebolavirus" );
 		System.out.println(bankSeq4.toString());
-	} //diff constructor, icreate objedt, pass four arguments with  args with costructor only...dont need to set 
+	} 
 
 }
-
-//one is while you create \ object, you set values, the other belwo is using setter method to create values instead
-//after create ojbect, you initiazlie two values with the setter method
