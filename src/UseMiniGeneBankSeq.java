@@ -20,7 +20,7 @@ public class UseMiniGeneBankSeq {
 		MiniGenBankSeq bankSeq1= new MiniGenBankSeq(); //create a new object of MiniGenBankSeq
 		System.out.println(bankSeq1.toString()); //print object with no argument constructor
 
-		//use MiniGenBankSeq setter method to
+		//use MiniGenBankSeq setter method to set data, creating an object using default constructor first
 		MiniGenBankSeq bankSeq2= new MiniGenBankSeq();
 		bankSeq2.setLocus("SCU49845     5028 bp    DNA             PLN       21-JUN-1999"); 	//provide data for the object for all variables as not set by constructor
 		bankSeq2.setAccNum("U49845");
@@ -28,7 +28,7 @@ public class UseMiniGeneBankSeq {
 		bankSeq2.source("Saccharomyces cerevisiae (baker's yeast)");
 		System.out.println(bankSeq2.toString()); //print object for all variables not set by constructor		
 
-		MiniGenBankSeq bankSeq3= new MiniGenBankSeq("SCU49845", "U49845" );
+		MiniGenBankSeq bankSeq3= new MiniGenBankSeq("SCU49845", "U49845" ); //using 2 args constructor to initiate two data members, two are initialized by the 2 args setter
 		System.out.println(bankSeq3.toString()); ///
 		bankSeq3.definition("Saccharomyces cerevisiae TCP1-beta gene, partial cds, and Axl2p (AXL2) and Rev7p (REV7) genes, complete cds.");
 		bankSeq3.source("Saccharomyces cerevisiae (baker's yeast)");	
@@ -37,6 +37,9 @@ public class UseMiniGeneBankSeq {
 		
 		MiniGenBankSeq bankSeq4= new MiniGenBankSeq("SCU49845", "U49845","Saccharomyces cerevisiae TCP1-beta gene, partial cds, and Axl2p (AXL2) and Rev7p (REV7) genes, complete cds.", "Saccharomyces cerevisiae (baker's yeast)" );
 		System.out.println(bankSeq4.toString());
-	}
+	} //diff constructor, icreate objedt, pass four arguments with  args with costructor only...dont need to set 
 
 }
+
+//one is while you create \ object, you set values, the other belwo is using setter method to create values instead
+//after create ojbect, you initiazlie two values with the setter method
